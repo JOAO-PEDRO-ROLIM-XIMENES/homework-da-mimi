@@ -1,0 +1,161 @@
+\documentclass[12pt,a4paper]{article}
+
+% Pacotes principais
+\usepackage{amssymb, amsmath, graphicx, float, enumitem, caption, hyperref, fancyhdr}
+\usepackage[margin=2.5cm]{geometry} % margens ajustadas
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % fonte mais limpa e moderna
+\usepackage{setspace} % controle de espaçamento
+\usepackage{titlesec} % customizar títulos
+\usepackage{xcolor}   % cores opcionais
+
+% Espaçamento entre linhas
+\onehalfspacing
+
+% Formato dos títulos (corrigido)
+\titleformat{\section}{\bfseries\Large}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries\large}{\thesubsection}{0.5em}{}
+
+% Espaçamento entre listas
+\setlist[itemize]{itemsep=0.5em, topsep=0.5em}
+
+% Cabeçalho e rodapé
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Lista de Exercícios}
+\fancyhead[R]{João Pedro Rolim Ximenes}
+\fancyfoot[C]{\thepage}
+
+\title{\vspace{-2cm}Lista de Exercícios\vspace{-0.5cm}}
+\author{João Pedro Rolim Ximenes \\ 566235}
+\date{\vspace{-1.5cm}}
+
+\begin{document}
+
+% Capa
+\begin{center}
+    \includegraphics[scale=0.9]{imagens/ufc.png} \\[1cm]
+    \textbf{\LARGE Universidade Federal do Ceará} \\[2cm]
+    \textbf{\huge EXERCÍCIOS - AULAS 1 A 3} \\[3cm]
+    \textbf{\Large João Pedro Rolim Ximenes} \\[0.2cm]
+    566235
+\end{center}
+
+\newpage
+
+\section*{AULA 01}
+
+\subsection*{Exercício 1}
+Classifique as variáveis abaixo:
+\begin{itemize}
+    \item Preço do kg de pão em Reais - Quantitativo
+    \item Renda familiar - Quantitativo
+    \item Salário em Reais - Quantitativo
+    \item Classe de renda  - Qualitativo
+    \item Horas de estudo por dia - Quantitativo
+    \item Tempo de estudo diário - Qualitativo
+    \item Nível de emprego - Qualitativo
+    \item Atividade profissional - Qualitativo
+    \item Nível de satisfação do cliente - Qualitativo
+    \item \textit{Explicação:} Se for baseado em contagens objetivas é quantitativo; se for baseado em avaliações de qualidade é qualitativo.
+\end{itemize}
+
+\subsection*{Exercício 2}
+Dados: $X = 2, 1, 2, 1, 3, 2, 0, 2, 0, 1, 2, 2$
+
+\begin{itemize}
+    \item Classificação da variável: Quantitativa discreta
+    \item Número de unidades e níveis: 12 unidades e 4 níveis
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\caption*{Frequência Absoluta}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|}
+\hline
+Valor & Frequência \\ \hline
+0 & 2 \\ \hline
+1 & 3 \\ \hline
+2 & 6 \\ \hline
+3 & 1 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption*{Frequência Relativa}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|}
+\hline
+Valor & Frequência Relativa \\ \hline
+0 & 0,17 \\ \hline
+1 & 0,25 \\ \hline
+2 & 0,50 \\ \hline
+3 & 0,08 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption*{Frequência Percentual}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|}
+\hline
+Valor & Percentual \\ \hline
+0 & 17\% \\ \hline
+1 & 25\% \\ \hline
+2 & 50\% \\ \hline
+3 & 8\% \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection*{Exercício 3}
+\begin{itemize}
+    \item O número de unidades estatísticas menores que 20 anos: 
+    \[
+    (0,1 \times 120) + (0,2 \times 80) = 28 \text{ unidades}
+    \]
+    \item O percentual de unidades com idade maior ou igual a 50 anos: 
+    \[
+    \big((0,5 \times 120) + (0,3 \times 80)\big) \times 0,5 = 42\%
+    \]
+    \item O número de homens com 30 anos ou mais: 
+    \[
+    0,8 \times 120 = 96 \text{ homens}
+    \]
+\end{itemize}
+
+\section*{AULA 03}
+
+\subsection*{Exercício 2}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{imagens/boxplot.jpg}
+    \caption*{Box-Plot}
+\end{figure}
+
+\subsection*{Exercício 3}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{imagens/boxplot2.jpg}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{imagens/grafico linha.jpg}
+\end{figure}
+
+\begin{itemize}
+    \item Mediana: 20
+    \item Variância: 4,25
+    \item Desvio padrão: 2,06
+    \item Mínimo: 14
+    \item Q1: 19
+    \item Q2: 20
+    \item Q3: 21
+    \item Máximo: 25
+\end{itemize}
+
+\end{document}
