@@ -1,0 +1,170 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{titleps}
+\usepackage{placeins} % Para controlar a posição das figuras
+\usepackage{caption} % Melhor controle de legendas
+\usepackage[most]{tcolorbox}
+\usepackage{mdframed}   % para o box
+
+% Definindo um estilo para o box
+\newmdenv[
+  linecolor=black,
+  linewidth=1pt,
+  roundcorner=5pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  frametitlebackgroundcolor=gray!20,
+  frametitlefont=\normalfont\bfseries,
+  frametitle={Equivalências usando apenas NAND}
+]{myformula}
+\tcbset{
+  myformula/.style={
+    colback=blue!5!white,
+    colframe=blue!75!black,
+    fonttitle=\bfseries,
+    title=#1,
+    boxrule=0.5mm,
+    arc=2mm,
+    top=2mm,
+    bottom=2mm,
+    left=2mm,
+    right=2mm
+  }
+}
+
+
+\geometry{
+    a4paper,
+    left=25mm,
+    right=25mm,
+    top=20mm,
+    bottom=20mm
+}
+
+% Configuração da página de título
+\newcommand{\customtitlepage}{
+    \begin{titlepage}
+        \vspace*{-0.4cm}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.5\linewidth]{imagens/logoUFC.png}
+        \end{figure}
+        \centering
+        {\large \textbf{Estatística para engenharia}
+        
+        
+        
+        \par}
+        \vspace{2cm}
+        {\large \textbf{L01 - L03} \par}
+        {\large \textbf{Atividades dos TO DO} \par}
+        \vspace{5cm}
+        
+        \vspace{0.5cm}
+        \begin{flushleft}
+       \large Nome: João Victor de Abreu Silva \large
+            
+        \end{flushleft}
+        \vfill
+    \end{titlepage}
+}
+
+\begin{document}
+
+\customtitlepage
+
+\section{Slide 1}
+\subsection{EXERCISE L1E1}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Ask} & \textbf{Answer} \\ \hline
+        Price of kg of bread in RS & QUALITATIVE \\ \hline
+        Family income & QUANTITATIVE \\ \hline
+        Salary in RS & QUANTITATIVE \\ \hline
+        Income class (I, II, etc) & QUALITATIVE \\ \hline
+        Hours of study per day & QUANTITATIVE \\ \hline
+        Time for study per day & QUALITATIVE \\ \hline
+        Employment level & QUALITATIVE \\ \hline
+        Working activity & QUALITATIVE \\ \hline
+        Customer satisfaction level & QUALITATIVE \\ \hline
+        Eyes colour & QUALITATIVE \\ \hline
+        Operating system (of a computer) & QUALITATIVE \\ \hline
+        Final grade for the statistic course & QUALITATIVE \\ \hline
+        Favoured brand of coffee & QUALITATIVE \\ \hline
+        Daily consumption of calories & QUANTITATIVE \\ \hline
+        Public debt (of a country) & QUANTITATIVE \\ \hline
+        Numb. of components in a family & QUANTITATIVE \\ \hline
+        Maximum speed in km/h & QUANTITATIVE \\ \hline
+        Shoe size & QUALITATIVE \\ \hline
+    \end{tabular}
+    \caption{Placeholder caption for ask and answer table for L1E1}
+    \label{tab:placeholder_label}
+\end{table}
+
+\subsection{EXERCISE L1E2}
+Given the following distribution of a generic variable X:\\
+\textbf{X -> 2 1 2 1 3 2 0 2 0 1 2 2} \\ \\
+QUESTIONS:\\
+a)How do you classify the variable?\\
+b)Define the number of units and the levels.\\
+c)Construct the frequency distribution (absolute, relative and percentage frequency).\\ \\
+ANSWERS\\ 
+a) QUANTITATIVE DISCRET\\
+b) HAVE 12 UNITS AND 4 LEVELS\\
+c) the table is on the page below (frequency table)\\ \\ \\ \\ \\
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cccc}
+        \toprule
+        Value(level) & Absolute frequency ($f_i$) & Relative frequency ($f_i/n$) & Percentual frequency (\%) \\
+        \midrule
+        0 & 2 & $2/12 = 0.167$ & 16.7\% \\
+        1 & 3 & $3/12 = 0.250$ & 25.0\% \\
+        2 & 6 & $6/12 = 0.500$ & 50.0\% \\
+        3 & 1 & $1/12 = 0.083$ & 8.3\% \\
+        \midrule
+        Total & 12 & 1.000 & 100\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{Frequency table}
+    \label{tab:frequencias}
+\end{table}
+% Requires: \usepackage{booktabs}
+
+
+\subsection{EXERCISE L1E3}
+The age on a group of 120 men and 80 women was recorded giving the following percentage distribution:\\
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ccc}
+        \hline
+        \textbf{Age} & \textbf{pMen} & \textbf{pWomen} \\
+        \hline
+        0 -- 20 & 10 & 20 \\
+        20 -- 30 & 10 & 20 \\
+        30 -- 50 & 30 & 30 \\
+        50 -- 90 & 50 & 30 \\
+        \hline
+    \end{tabular}
+    \caption{Placeholder caption for age distribution by gender}
+    \label{tab:age_distribution}
+\end{table}
+
+Define:\\
+a)The number of statistic units ni younger than 20 years.\\
+b)The percentage of statistic units with an age greater or equal to 50 years.\\
+c)The number of men that are 30 years old or older.\\
+
+
+\end{document}
