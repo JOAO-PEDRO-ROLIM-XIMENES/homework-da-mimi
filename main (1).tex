@@ -1,9 +1,14 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{placeins}
+\usepackage{caption}
 \usepackage[brazil]{babel}
+\usepackage{amsmath} % para fórmulas matemáticas
+\usepackage{amssymb} % para fórmulas matemáticas
 \usepackage{geometry}
 \usepackage{graphicx}
+\usepackage{mdframed} % para spotbox
 \geometry{
     a4paper,
     left=25mm,
@@ -42,5 +47,78 @@
 \begin{document}
 
 \customtitlepage
+
+\section{Questão 1}
+
+ As emissões diárias de um gás poluente de uma planta industrial foram registradas 80 vezes, em uma determinada unidade de medida. Os dados obtidos estão apresentados na
+ Tabela 1
+ \begin{table}[!h]
+\centering
+\begin{tabular}{rrrrrrrrrrrr}
+15.8 & 22.7 & 26.8 & 19.1 & 18.5 & 14.4 & 8.3 & 25.9 & 26.4 & 9.8 & 21.9 & 10.5 \\
+17.3 & 6.2  & 18.0 & 22.9 & 24.6 & 19.4 & 12.3 & 15.9 & 20.1 & 17.0 & 22.3 & 27.5 \\
+23.9 & 17.5 & 11.0 & 20.4 & 16.2 & 20.8 & 20.9 & 21.4 & 18.0 & 24.3 & 11.8 & 17.9 \\
+18.7 & 12.8 & 15.5 & 19.2 & 13.9 & 28.6 & 19.4 & 21.6 & 13.5 & 24.6 & 20.0 & 24.1 \\
+9.0  & 17.6 & 25.7 & 20.1 & 13.2 & 23.7 & 10.7 & 19.0 & 14.5 & 18.1 & 31.8 & 28.5 \\
+22.7 & 15.2 & 23.0 & 29.6 & 11.2 & 14.7 & 20.5 & 26.6 & 13.3 & 18.1 & 24.8 & 26.1 \\
+7.7  & 22.5 & 19.3 & 19.4 & 16.7 & 16.9 & 23.5 & 18.4 &      &      &      &      \\
+\end{tabular}
+\caption{Emissões diárias de gás poluente (questão 1).}
+\end{table}
+
+\subsection{ Calcule as medidas de tendência central (média, mediana e moda) e as medidas de
+ dispersão (amplitude, variância, desvio padrão e coeficiente de variação) para o conjunto de dados da Tabela 1. Interprete os resultados} \\
+Para facilitar a leitura da questão e dos dados em análise, é possível que seja criado um algoritmo em R utilizando o Sort que organize os números de maneira crescente, assim, fica mais fácil de interpretar os dados. Após essa implementação, a tabela obtida é: 
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{rrrrrrrrrr}
+6.2 & 7.7 & 8.3 & 9.0 & 9.8 & 10.5 & 10.7 & 11.0 & 11.2 & 11.8 \\
+12.3 & 12.8 & 13.2 & 13.3 & 13.5 & 13.9 & 14.4 & 14.5 & 14.7 & 15.2 \\
+15.5 & 15.8 & 15.9 & 16.2 & 16.7 & 16.9 & 17.0 & 17.3 & 17.5 & 17.6 \\
+17.9 & 18.0 & 18.0 & 18.1 & 18.1 & 18.4 & 18.5 & 18.7 & 19.0 & 19.1 \\
+19.2 & 19.3 & 19.4 & 19.4 & 19.4 & 20.0 & 20.1 & 20.1 & 20.4 & 20.5 \\
+20.8 & 20.9 & 21.4 & 21.6 & 21.9 & 22.3 & 22.5 & 22.7 & 22.7 & 22.9 \\
+23.0 & 23.5 & 23.7 & 23.9 & 24.1 & 24.3 & 24.6 & 24.6 & 24.8 & 25.7 \\
+25.9 & 26.1 & 26.4 & 26.6 & 26.8 & 27.5 & 28.5 & 28.6 & 29.6 & 31.8 \\
+\end{tabular}
+\caption{Emissões diárias de gás poluente em ordem crescente utilizando sort (questão 1).}
+\end{table}
+É possível responder o problema utilizando funções já conhecidas do R, como é o caso do mean e median, que já calculam automaticamente estas informações. No entanto, para melhor explanação, as fórmulas utilizadas são as seguintes:\\
+Média (Soma de todos os elementos e divisão pela quantidade n deles):
+\begin{equation} 
+  \bar{x} = \frac{\sum_{i=1}^{n} x_i}{n} %para média aritmética
+\end{equation}
+Mediana (quando o resultado é um número quebrado, faz-se a média entre os dois valores):
+\begin{equation}
+    P = \frac{n + 1}{2}
+  \end{equation}
+Para a moda deve-se contar a quantidade de vezes que cada elemento aparece, e o que mais se repetir torna-se a moda daquele espaço amostral. \\
+Amplitude (é a relação entre o valor máximo e mínimo de um determinado conjunto de resultados):
+ \begin{equation}
+    A = x_{\max} - x_{\min}
+  \end{equation}
+  Variância amostral (é feito a partir do somatório dos quadrados dos desvios simples sobre a quantidade elementos, neste caso):
+  \begin{equation}
+    s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}
+  \end{equation}
+  Desvio padrão (de forma sucinta, é a raíz da variância):
+    \begin{equation}
+    s = \sqrt{s^2} = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n - 1}}
+  \end{equation}
+  Coeficiente de variação (se trata da relação percentual entre a variância e a média):
+  \begin{equation}
+    CV = \frac{s}{\bar{x}} \times 100\%
+  \end{equation}
+Com todos os cálculos devidamente apresentados, o resultado em R que calcula todos automaticamente foi a seguinte: \\
+=== Medidas de Tendência Central ===\\
+Média   : 19.02 \\
+Mediana : 19.15 (lembrando que mediana é a média dos elementos entre as pos 40 e 41) \\
+Moda    : 19.4\\ \\
+=== Medidas de Dispersão ===\\
+Amplitude             : 25.6 \\
+Variância             : 30.84\\ 
+Desvio padrão         : 5.55 \\
+Coeficiente de variação: 29.2 porcento \\
 
 \end{document}
