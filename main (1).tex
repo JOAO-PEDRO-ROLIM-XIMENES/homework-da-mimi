@@ -1,14 +1,46 @@
-\documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\geometry{
+    a4paper,
+    left=25mm,
+    right=25mm,
+    top=20mm,
+    bottom=20mm
+}
+\newcommand{\customtitlepage}{
+    \begin{titlepage}
+        \vspace*{-0.4cm}
+        \begin{figure}[!h]
+            \centering
+            \includegraphics[width=0.5\linewidth]{imagens/logoUFC.png}
+        \end{figure}
+        \centering
+        {\large \textbf{Estatística para Engenharia}\par}
+        \vspace{6cm}
+        {\large \textbf{HOMEHORK}\par}
+        {\large \textbf{Estatística e probabilidade}\par}
+        \vspace{5cm}
 
-\title{homework}
-\author{Jp Ximenes}
-\date{October 2025}
+        \begin{flushleft}
+            \large Dupla: 
+            \\ João Pedro Rolim Ximenes \\
+            João Victor de Abreu Silva - 568274\\
+            Profª: Michela Mulas \\
+        \end{flushleft}
+\vspace{3cm}
+        \begin{flushleft}
+            \centering \large \textbf{23/10/2025}
+        \end{flushleft}
+        \vfill
+    \end{titlepage}
+}
 
 \begin{document}
 
-\maketitle
-
-\section{Introduction}
+\customtitlepage
 
 \end{document}
