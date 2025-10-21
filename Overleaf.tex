@@ -8,6 +8,7 @@
 \usepackage{amssymb} % para fórmulas matemáticas
 \usepackage{geometry}
 \usepackage{graphicx}
+\usepackage{float} %manipular mais facilmente localização de imagens
 \usepackage{mdframed} % para spotbox
 \geometry{
     a4paper,
@@ -121,4 +122,63 @@ Variância             : 30.84\\
 Desvio padrão         : 5.55 \\
 Coeficiente de variação: 29.2 porcento \\
 
+\subsection{Construa um histograma e um boxplot para os dados de emissões. Os dados parecem
+ estar simetricamente distribuídos? Existem valores atípicos?} 
+ \begin{figure} [H]
+     \centering
+     \includegraphics[width=0.40\linewidth]{imagens/histograma R.png} 
+     \caption{Histograma q1.2}
+     \label{fig:placeholder}
+ \end{figure}
+
+ \begin{figure} [H]
+     \centering
+     \includegraphics[width=0.5\linewidth]{imagens/boxplot q1.2.png}
+     \caption{BoxPlot q1.2}
+     \label{fig:placeholder}
+ \end{figure}
+
+Após a análise de ambos gráficos, é perceptível a partir do histograma que os dados estão simetricamente distribuídos, pois o gráfico decresce para ambos lados depois do pico da moda, ou seja, a média e a moda se encontram em valores similares, tal comportamento é evidenciado também no boxspot, onde é notório que a mediana está suficientemente próxima ao centro como o esperado (no intervalo entre os quartis), o que demonstra uma distribuição linear de resultados. Caso a média também estivesse evidenciada no BoxSpot, ao analisar novamente a q1.1, é visto que o resultado está também muito próximo ao da mediana. Tudo isto permite que tenhamos uma ideia clara de que temos uma distribuição quase simétrica de dados. Como visto no BoxPlot não existe valor atípico significante, no entanto, para comprovar isso é feita a seguinte relação (descobrir outliers q1.3). \\
+
+\subsection{Determine os quartis (Q1, Q2, Q3) e o intervalo interquartil (IQR). Utilize esses valores
+ para reforçar sua análise sobre a presença devalores atípicos}
+Primeiramente, calcula-se a amplitude interquartil:
+\begin{equation}
+IQR = Q_3 - Q_1
+\end{equation}
+
+Em seguida, determinam-se os limites inferior e superior (Outlier):
+\begin{equation}
+\text{Limite inferior} = Q_1 - 1.5 \times IQR
+\end{equation}
+
+\begin{equation}
+\text{Limite superior} = Q_3 + 1.5 \times IQR
+\end{equation}
+
+\noindent
+Com base nesses limites, classificam-se os outliers da seguinte forma:
+
+\begin{itemize}
+    \item Um valor $x_i$ é considerado um outlier mínimo (inferior) se:
+    \begin{equation}
+    x_i < Q_1 - 1.5 \times IQR
+    \end{equation}
+
+    \item Um valor $x_i$ é considerado um outlier máximo (superior) se:
+    \begin{equation}
+    x_i > Q_3 + 1.5 \times IQR
+    \end{equation}
+\end{itemize}
+No caso, a partir dos dados da amostra, temos:
+
+\[Q_1 = 15{,}9 \quad ; \quad Q_3 = 23{,}3\]
+\[IQR = Q_3 - Q_1 = 23{,}3 - 15{,}9 = 7{,}4\]
+\noindent
+Os limites inferior e superior são calculados como:
+\[\text{Limite inferior} = Q_1 - 1{,}5 \times IQR = 15{,}9 - 1{,}5(7{,}4) = 15{,}9 - 11{,}1 = 4{,}8\]
+\[\text{Limite superior} = Q_3 + 1{,}5 \times IQR = 23{,}3 + 1{,}5(7{,}4) = 23{,}3 + 11{,}1 = 34{,}4\]
+\noindent
+Assim, os valores considerados não atípicos pertencem ao intervalo:
+\[[4{,}8 \; , \; 34{,}4]\] estes que não são ultrapassados por dados inferiores ou superiores, já que o menor dado é de 6.2 e o maior de 31.8, logo, não existem outliers.
 \end{document}
