@@ -122,7 +122,7 @@ Moda    : 19.4\\ \\
 Amplitude             : 25.6 \\
 Variância             : 30.84\\ 
 Desvio padrão         : 5.55 \\
-Coeficiente de variação: 29.2 porcento \\
+Coeficiente de variação: 29.2\% \\
 
 \subsection{Construa um histograma e um boxplot para os dados de emissões. Os dados parecem
  estar simetricamente distribuídos? Existem valores atípicos?} 
@@ -198,7 +198,57 @@ Portanto, aproximadamente 13,8\% dos dias apresentaram emissões acima do limite
 
 
 \section{Questão 2}
-\subsection{ }
+\subsection*{Questão 2}
+
+Uma empresa italiana recebeu 20 currículos de cidadãos italianos e estrangeiros na seleção de pessoal qualificado para o cargo de gerente de relações exteriores. 
+A Tabela~\ref{tab:candidatos} reporta as informações consideradas relevantes na seleção: idade, nacionalidade, nível mínimo de renda desejada (em milhares de euros) e anos de experiência no trabalho. 
+
+\begin{table}[H]
+\centering
+\caption{Idade, nacionalidade, renda desejada e anos de experiência dos candidatos.}
+\label{tab:candidatos}
+\begin{tabular}{cccc}
+\toprule
+\textbf{Idade} & \textbf{Nacionalidade} & \textbf{Renda (mil €)} & \textbf{Experiência (anos)} \\
+\midrule
+28 & Italiana  & 2.3 & 2  \\
+34 & Inglesa   & 1.6 & 8  \\
+46 & Belga     & 1.2 & 21 \\
+26 & Espanhola & 0.9 & 1  \\
+37 & Italiana  & 2.1 & 15 \\
+29 & Espanhola & 1.6 & 3  \\
+51 & Francesa  & 1.8 & 28 \\
+31 & Belga     & 1.4 & 5  \\
+39 & Italiana  & 1.2 & 13 \\
+43 & Italiana  & 2.8 & 20 \\
+58 & Italiana  & 3.4 & 32 \\
+44 & Inglesa   & 2.7 & 23 \\
+25 & Francesa  & 1.6 & 1  \\
+23 & Espanhola & 1.2 & 0  \\
+52 & Italiana  & 1.1 & 29 \\
+42 & Alemana   & 2.5 & 18 \\
+48 & Francesa  & 2.0 & 19 \\
+33 & Italiana  & 1.7 & 7  \\
+41 & Alemana   & 2.1 & 12 \\
+36 & Italiana  & 3.2 & 23 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Calcule a média, mediana e desvio padrão para as variáveis idade, renda desejada e anos de experiência. O que você pode inferir a partir desses valores sobre o perfil típico dos candidatos?}
+Utilizando as funções e fórmulas já empregadas anteriormente na q1.1 e reutilizando seus conceitos, é factível um código em R que faz todas as operações automaticamente e dá como resultado as seguintes informações:
+---- Idade (anos) ----\\n = 20
+\\Média   = 38.65 \\Mediana = 38.50
+\\Desvio padrão = 9.93\\---- Renda desejada (mil €) ----
+\\n = 20\\Média   = 1.92
+\\Mediana = 1.75\\Desvio padrão = 0.71
+\\---- Experiência (anos) ----\\n = 20
+\\Média   = 14.00\\Mediana = 14.00
+\\Desvio padrão = 10.27\\Interpretação para Idade:
+\\- Variabilidade moderada.\\- Coeficiente de variação (sd/mean) = 0.26
+\\Interpretação para Renda desejada:\\- Variabilidade moderada.
+\\- Coeficiente de variação (sd/mean) = 0.37\\Interpretação para Experiência:
+\\- Alta variabilidade relativa.\\- Coeficiente de variação (sd/mean) = 0.73
 \subsection{ }
 \subsection{ }
 \subsection{ }
