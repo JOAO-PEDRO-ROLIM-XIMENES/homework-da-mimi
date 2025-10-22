@@ -10,6 +10,8 @@
 \usepackage{graphicx}
 \usepackage{float} %manipular mais facilmente localização de imagens
 \usepackage{mdframed} % para spotbox
+\usepackage{hyperref}
+\usepackage{booktabs}
 \geometry{
     a4paper,
     left=25mm,
@@ -33,7 +35,7 @@
 
         \begin{flushleft}
             \large Dupla: 
-            \\ João Pedro Rolim Ximenes \\
+            \\ João Pedro Rolim Ximenes- 566235 \\
             João Victor de Abreu Silva - 568274\\
             Profª: Michela Mulas \\
         \end{flushleft}
@@ -181,4 +183,93 @@ Os limites inferior e superior são calculados como:
 \noindent
 Assim, os valores considerados não atípicos pertencem ao intervalo:
 \[[4{,}8 \; , \; 34{,}4]\] estes que não são ultrapassados por dados inferiores ou superiores, já que o menor dado é de 6.2 e o maior de 31.8, logo, não existem outliers.
+
+\subsection{ Suponha que o limite máximo aceitável diário para as emissões seja de 25 unidades. 
+ Qual a proporção de dias em que aplanta excedeu esse limite? O comportamento
+ geral das emissões estaria em conformidade com esse padrão regulatório?}
+ Para este item, é factível uma observação e relação rápida, onde podemos contar a quantidade de itens acima de 25.0 e a quantidade de itens do vetor. Isso pode ser feito dentro do R utilizando a função "length" para o vetor e um contador para quando os valores forem acima da margem estipulada. o resultado é o seguinte:
+
+\[n = 80\]
+\[n_{>25} = 11\]
+\[p = \frac{n_{>25}}{n} = \frac{11}{80} = 0{,}1375 \approx 13{,}8\%\]
+
+\noindent
+Portanto, aproximadamente 13,8\% dos dias apresentaram emissões acima do limite de 25 unidades. Portanto, dependendo da margem de erro estipulada, está sim dentro ou não da conformidade, se for adotada uma de 10\%, os valores excedem isto, no entanto, 13,8\% ainda é um percentual baixo.
+
+
+\section{Questão 2}
+\subsection{ }
+\subsection{ }
+\subsection{ }
+\subsection{ }
+\subsection{ }
+
+\section{Questão 3}
+
+Nessa questão, o foco é a análise de dados diretamente de um arquivo em .csv sobre o compartilhamento de bicicletas. Em cada item, a ideia principal é usar diferentes gráficos, escalas, conjuntos e cálculos para determinar com precisão informações dedicadas à prática estatística.
+
+
+\href{https://raw.githubusercontent.com/JOAO-PEDRO-ROLIM-XIMENES/homework-da-mimi/refs/heads/main/HW1_bike_sharing.csv}{link do arquivo: HW1\_bike\_sharing.csv}
+\subsection{Carregue o conjunto de dados HW1\_bike\_sharing.csv no R. Classifique as variáveis
+ quanto ao tipo (categórica ou numérica), identifique o número total de observações
+ e as datas de início e fim da amostra }
+ 
+ 
+ \begin{itemize}
+    \item De inicício, usando as funções min(dadosdteday) e max(dadosdteday) pode-se determinar as datas de início e fim do monitoramento. As quais retornam os valores:  2011-01-01 e 2012-12-31 respectivamente.
+    \item Segundamente, foi usado a função nrow(dados) para identificar o número total de observações
+    \item Por fim, a classificação seguiu o padrão lógico de variavel exata e variavel de referêcia, a primeira se refere a um valor preciso e medido em quanto a segunda se refere a um valor demarcatório.
+    
+    
+    
+\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Classificação das variáveis do \textit{HW1\_bike\_sharing.csv}}
+\label{tab:variaveis}
+\begin{tabular}{lll}
+\toprule
+\textbf{Variável} & \textbf{Descrição} & \textbf{Tipo} \\ 
+\midrule
+\texttt{instant} & Índice de registro & Numérica \\ 
+\texttt{dteday} & Data da observação & Categórica \\ 
+\texttt{season} & Estação do ano & Categórica \\ 
+\texttt{weathersit} & Condições meteorológicas & Categórica \\ 
+\texttt{temp} & Temperatura em °C (normalizada) & Numérica \\  
+\texttt{casual} & Número de usuários casuais & Numérica  \\ 
+\texttt{registered} & Número de usuários registrados & Numérica \\ 
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\subsection{ Calcule medidas de tendência central (média, mediana) e os quartis para cada característica numérica relevante. Apresente os resultados em uma tabela com título
+ apropriado. Comente os principais pontos  }
+ \begin{itemize}
+    \item Nesse item, calculou-se medidas extremamente relevantes para avaliar os dados, medidas as quais o output em R tabelou e simplificou a visualização agrupada, permitindo comparações diretas e revisões por pares.
+    \item Ademais, eu pude fazer uma tabela em latex semelhante ao output, onde nota-se médias e medianas estritamente parecidas, fato esse que mostra com clareza a importância do domínio das funções em R como a  sapply para comparações imediatas no data frame.
+    
+    
+    
+\end{itemize}
+ 
+\begin{table}[H]
+\centering
+\caption{Medidas de tendência central e quartis das variáveis numéricas do conjunto \textit{HW1\_bike\_sharing.csv}}
+\label{tab:tendencia2}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Variável} & \textbf{Média} & \textbf{Mediana} & \textbf{1º Quartil (Q1)} & \textbf{3º Quartil (Q3)} \\ 
+\midrule
+instant    & 366.00  & 366.0  & 183.5  & 548.5  \\ 
+temp       & 20.31   & 20.4   & 13.8   & 26.9   \\ 
+casual     & 848.18  & 713.0  & 315.5  & 1096.0 \\ 
+registered & 3656.17 & 3662.0 & 2497.0 & 4776.5 \\ 
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{ }
+\subsection{ }
+
 \end{document}
