@@ -88,29 +88,37 @@ Para facilitar a leitura da questão e dos dados em análise, é possível que s
 \caption{Emissões diárias de gás poluente em ordem crescente utilizando sort (questão 1).}
 \end{table}
 É possível responder o problema utilizando funções já conhecidas do R, como é o caso do mean e median, que já calculam automaticamente estas informações. No entanto, para melhor explanação, as fórmulas utilizadas são as seguintes:\\
+\[\bar{x} =\text{média;}\]
+\[n=\text{quantidade de elementos (utiliza o length para o vetor nesta questão vale 80)}\]
+\[x_i=\text{elemento na posição (para média é a soma quantitativa de todos os elementos)}\]
+\[P=\text{posição do elemento}\]
+\[A=\text{amplitude}\]
+\[x_{max,min}=\text{valores máximo e mínimo}\]
+\[s=\text{variância}\]
+\[CV=\text{coeficiente de variação (em \%)}\]
 Média (Soma de todos os elementos e divisão pela quantidade n deles):
-\begin{equation} 
+\begin{equation} \label{media}
   \bar{x} = \frac{\sum_{i=1}^{n} x_i}{n} %para média aritmética
 \end{equation}
 Mediana (quando o resultado é um número quebrado, faz-se a média entre os dois valores):
-\begin{equation}
+\begin{equation}\label{mediana}
     P = \frac{n + 1}{2}
   \end{equation}
 Para a moda deve-se contar a quantidade de vezes que cada elemento aparece, e o que mais se repetir torna-se a moda daquele espaço amostral. \\
 Amplitude (é a relação entre o valor máximo e mínimo de um determinado conjunto de resultados):
- \begin{equation}
+ \begin{equation} \label{amplitude}
     A = x_{\max} - x_{\min}
   \end{equation}
   Variância amostral (é feito a partir do somatório dos quadrados dos desvios simples sobre a quantidade elementos, neste caso):
-  \begin{equation}
+  \begin{equation} \label{variancia}
     s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}
   \end{equation}
   Desvio padrão (de forma sucinta, é a raíz da variância):
-    \begin{equation}
+    \begin{equation} \label{dp}
     s = \sqrt{s^2} = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n - 1}}
   \end{equation}
   Coeficiente de variação (se trata da relação percentual entre a variância e a média):
-  \begin{equation}
+  \begin{equation} \label{CV}
     CV = \frac{s}{\bar{x}} \times 100\%
   \end{equation}
 Com todos os cálculos devidamente apresentados, o resultado em R que calcula todos automaticamente foi a seguinte: \\
@@ -140,7 +148,7 @@ Coeficiente de variação: 29.2\% \\
      \label{fig:placeholder}
  \end{figure}
 
-Após a análise de ambos gráficos, é perceptível a partir do histograma que os dados estão simetricamente distribuídos, pois o gráfico decresce para ambos lados depois do pico da moda, ou seja, a média e a moda se encontram em valores similares, tal comportamento é evidenciado também no boxspot, onde é notório que a mediana está suficientemente próxima ao centro como o esperado (no intervalo entre os quartis), o que demonstra uma distribuição linear de resultados. Caso a média também estivesse evidenciada no BoxSpot, ao analisar novamente a q1.1, é visto que o resultado está também muito próximo ao da mediana. Tudo isto permite que tenhamos uma ideia clara de que temos uma distribuição quase simétrica de dados. Como visto no BoxPlot não existe valor atípico significante, no entanto, para comprovar isso é feita a seguinte relação (descobrir outliers q1.3). \\
+Após a análise de ambos gráficos, é perceptível a partir do histograma que os dados estão simetricamente distribuídos, pois o gráfico decresce para ambos lados depois do pico da moda, ou seja, a média e a moda se encontram em valores similares, tal comportamento é evidenciado também no boxspot, onde é notório que a mediana está suficientemente próxima ao centro como o esperado (no intervalo entre os quartis), o que demonstra uma distribuição linear de resultados. Caso a média também estivesse evidenciada no BoxSpot, ao analisar novamente a q1.1, é visto que o resultado está também muito próximo ao da mediana. Tudo isto permite que tenhamos uma ideia clara de que temos uma distribuição quase simétrica de dados, com uma pequena tendência para a direita (a maior parte dos dados é um pouco maior do que os valores da média/mediana). Como visto no BoxPlot não existe valor atípico significante, no entanto, para comprovar isso é feita a seguinte relação (descobrir outliers q1.3). \\
 
 \subsection{Determine os quartis (Q1, Q2, Q3) e o intervalo interquartil (IQR). Utilize esses valores
  para reforçar sua análise sobre a presença devalores atípicos}
@@ -198,7 +206,6 @@ Portanto, aproximadamente 13,8\% dos dias apresentaram emissões acima do limite
 
 
 \section{Questão 2}
-\subsection*{Questão 2}
 
 Uma empresa italiana recebeu 20 currículos de cidadãos italianos e estrangeiros na seleção de pessoal qualificado para o cargo de gerente de relações exteriores. 
 A Tabela~\ref{tab:candidatos} reporta as informações consideradas relevantes na seleção: idade, nacionalidade, nível mínimo de renda desejada (em milhares de euros) e anos de experiência no trabalho. 
@@ -237,6 +244,8 @@ A Tabela~\ref{tab:candidatos} reporta as informações consideradas relevantes n
 
 \subsection{Calcule a média, mediana e desvio padrão para as variáveis idade, renda desejada e anos de experiência. O que você pode inferir a partir desses valores sobre o perfil típico dos candidatos?}
 Utilizando as funções e fórmulas já empregadas anteriormente na q1.1 e reutilizando seus conceitos, é factível um código em R que faz todas as operações automaticamente e dá como resultado as seguintes informações:
+neste caso, é importante ressaltar que o n é 20, pois é a quantidade total de pessoas no espaço amostral. \\
+as fórmulas são as: \ref{media} para média; \ref{mediana} para mediana(para qualquer um dos dados; \ref{dp} para o desvio padrão utilizando as informações anteriores.\\
 ---- Idade (anos) ----\\n = 20
 \\Média   = 38.65 \\Mediana = 38.50
 \\Desvio padrão = 9.93\\---- Renda desejada (mil €) ----
@@ -249,10 +258,63 @@ Utilizando as funções e fórmulas já empregadas anteriormente na q1.1 e reuti
 \\Interpretação para Renda desejada:\\- Variabilidade moderada.
 \\- Coeficiente de variação (sd/mean) = 0.37\\Interpretação para Experiência:
 \\- Alta variabilidade relativa.\\- Coeficiente de variação (sd/mean) = 0.73
-\subsection{ }
-\subsection{ }
-\subsection{ }
-\subsection{ }
+\subsection{Agrupe os candidatos por nacionalidade e calcule a renda média desejada e os anos
+ médios de experiência para cada grupo. Qual nacionalidade apresenta a maior renda
+ média desejada? Qual grupo aparenta ser o mais experiente? }
+ % Requires: \usepackage{booktabs}
+\begin{table}[h]
+    \centering
+    \caption{Tabela de nacionalidades e renda/experiência média}
+    \label{tab:placeholder_label}
+    \begin{tabular}{lcccccc}
+        \toprule
+        & Italiana & Inglês & Belga & Espanhola & Francesa & Alemanha\\
+        \midrule
+        Quantidade & 8& 2& 2& 3& 3&2 \\
+        \[\text{Renda média }Renda_i/Qtd\] &2,225 &2,15 & 1,3&1,23 &1,8 &2,3\\
+        \[\text{Experiência }Exp_i/Qtd\] &17,625 &15,5 &13 &1,3 &16 &15 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+Para Exp sendo a soma de toda a experiência por nacionalidade e Renda sendo a soma da renda por nacionalidade. Percebe-se assim que os cálculos na mão dão resultados iguais aos do R, já que em ambos é possível notar que a maior renda média desejada foi a Alemã com 2,3 e a maior experiência de trabalho foi a Italiana, mesmo com a maior quantidade de candidatos.
+A saída do código em R de forma apresentável é a seguinte:\\
+Nacionalidade    /Renda_Media / Exp_Media\\
+1 Alemana        /      2.3   /    15 \\  
+2 Belga          /      1.3   /    13\\   
+3 Espanhola      /      1.23  /   1.33\\
+4 Francesa       /      1.8   /    16  \\ 
+5 Inglesa        /      2.15  /    15.5 \\
+6 Italiana       /      2.22  /    17.6 \\
+\subsection{ Existe correlação entre anos de experiência e renda desejada? Utilize ferramentas visuais apropriadas (por exemplo, gráfico de dispersão) e calcule o coeficiente de correlação
+ de Pearson. Interprete o resultado}\\
+\item Para essa questão é necessário primeiro entendimento sobre o que é a   \href{https://www.blog.psicometriaonline.com.br/o-que-e-correlacao-de-pearson/}{correlação de Pearson} que segundo o site é quando duas variáveis contínuas formam uma associação direta e linear com avanço (fator até +1) ou decremento (fator até -1) ou nula (fator 0) e isso é evidenciado na inclinação na reta, sendo para cima um aumento linear, e para baixo um decremento linear, sendo o declive indicação de como o coeficiente atua. No caso em questão, é pedido para que se analise a experiência em função da pretenção salarial. Em R o seguinte gráfico é obtido:
+ \begin{figure} [H]
+     \centering
+     \includegraphics[width=0.6\linewidth]{imagens/q2.3.png}
+     \caption{Dispersão de Renda x Experiência (correlação de Pearson)}
+     \label{fig:placeholder}
+ \end{figure}
+ \item Ao analisar o gráfico, é perceptível que a reta está crescente, ou seja, geralmente, quanto mais anos de experiência, maior é a renda desejada, essa observação da correlação de Pearson permite analisar como uma variável pode influenciar em outra e demonstra uma maneira efetiva de entender o pensamento dentro de um espaço amostral reduzido. \\
+ Segundo o código em R, a correlação de Pearson também foi de 0,566, o que indica um avanço moderado, ou seja, geralmente os valores estão ligador de uma maneira linear e seguindo um padrão de avanço.
+\subsection{Suponha que a empresa queira priorizar candidatos com pelo menos 10 anos de experiência e renda desejada inferior a 2,0 (mil euros). Quantos candidatos atendem a ambos
+ os critérios? Liste suas nacionalidades e idades }
+ \begin{table}[H]
+\centering
+\caption{Candidatos com pelo menos 10 anos de experiência e renda desejada inferior a 2,0 mil euros}
+\begin{tabular}{ccccc}
+\hline
+\textbf{Nº} & \textbf{Idade} & \textbf{Nacionalidade} & \textbf{Renda (mil €)} & \textbf{Experiência (anos)} \\ \hline
+3  & 46 & Belga     & 1.2 & 21 \\
+7  & 51 & Francesa  & 1.8 & 28 \\
+9  & 39 & Italiana  & 1.2 & 13 \\
+15 & 52 & Italiana  & 1.1 & 29 \\
+\hline
+\end{tabular}
+\end{table}
+Perceba que a candidata de índice 17 na tabela principal tem renda desejada em exatamente 2000€ e apresenta a quantidade de tempo para experiência. Mas apenas 4 candidatos seguem fielmente aos parâmetros propostos.
+\subsection{Construa gráficos que permitam visualizar a distribuição da idade e da renda desejada,
+ separados por nacionalidade. Utilize histogramas, box-plots ou gráficos de barras, e
+ comente as principais diferenças observadas entre os grupos }
 
 \section{Questão 3}
 
@@ -266,7 +328,7 @@ Nessa questão, o foco é a análise de dados diretamente de um arquivo em .csv 
  
  
  \begin{itemize}
-    \item De inicício, usando as funções min(dadosdteday) e max(dadosdteday) pode-se determinar as datas de início e fim do monitoramento. As quais retornam os valores:  2011-01-01 e 2012-12-31 respectivamente.
+    \item De início, usando as funções min(dadosdteday) e max(dadosdteday) pode-se determinar as datas de início e fim do monitoramento. As quais retornam os valores:  2011-01-01 e 2012-12-31 respectivamente.
     \item Segundamente, foi usado a função nrow(dados) para identificar o número total de observações
     \item Por fim, a classificação seguiu o padrão lógico de variavel exata e variavel de referêcia, a primeira se refere a um valor preciso e medido em quanto a segunda se refere a um valor demarcatório.
     
@@ -297,7 +359,7 @@ Nessa questão, o foco é a análise de dados diretamente de um arquivo em .csv 
  apropriado. Comente os principais pontos  }
  \begin{itemize}
     \item Nesse item, calculou-se medidas extremamente relevantes para avaliar os dados, medidas as quais o output em R tabelou e simplificou a visualização agrupada, permitindo comparações diretas e revisões por pares.
-    \item Ademais, eu pude fazer uma tabela em latex semelhante ao output, onde nota-se médias e medianas estritamente parecidas, fato esse que mostra com clareza a importância do domínio das funções em R como a  sapply para comparações imediatas no data frame.
+    \item Ademais, foi feito uma tabela em latex semelhante ao output, onde nota-se médias e medianas estritamente parecidas, fato esse que mostra com clareza a importância do domínio das funções em R como a  sapply para comparações imediatas no data frame.
     
     
     
