@@ -148,7 +148,8 @@ Coeficiente de variação: 29.2\% \\
      \label{fig:placeholder}
  \end{figure}
 
-Após a análise de ambos gráficos, é perceptível a partir do histograma que os dados estão simetricamente distribuídos, pois o gráfico decresce para ambos lados depois do pico da moda, ou seja, a média e a moda se encontram em valores similares, tal comportamento é evidenciado também no boxspot, onde é notório que a mediana está suficientemente próxima ao centro como o esperado (no intervalo entre os quartis), o que demonstra uma distribuição linear de resultados. Caso a média também estivesse evidenciada no BoxSpot, ao analisar novamente a q1.1, é visto que o resultado está também muito próximo ao da mediana. Tudo isto permite que tenhamos uma ideia clara de que temos uma distribuição quase simétrica de dados, com uma pequena tendência para a direita (a maior parte dos dados é um pouco maior do que os valores da média/mediana). Como visto no BoxPlot não existe valor atípico significante, no entanto, para comprovar isso é feita a seguinte relação (descobrir outliers q1.3). \\
+Após a análise de ambos gráficos, é perceptível a partir do histograma que os dados estão simetricamente distribuídos, pois o gráfico decresce para ambos lados depois do pico da moda, ou seja, a média e a moda se encontram em valores similares, tal comportamento é evidenciado também no boxspot, onde é notório que a mediana está suficientemente próxima ao centro como o esperado (no intervalo entre os quartis), o que demonstra uma distribuição linear de resultados. Caso a média também estivesse evidenciada no BoxSpot, ao analisar novamente a q1.1, é visto que o resultado está também muito próximo ao da mediana. Tudo isto permite a percepção de uma distribuição quase simétrica de dados, com uma pequena tendência para a direita (a maior parte dos dados é um pouco maior do que os valores da média/mediana). 
+Como visto no BoxPlot não existe valor atípico significante, no entanto, para comprovar isso é feita a seguinte relação (descobrir outliers q1.3). \\
 
 \subsection{Determine os quartis (Q1, Q2, Q3) e o intervalo interquartil (IQR). Utilize esses valores
  para reforçar sua análise sobre a presença devalores atípicos}
@@ -287,7 +288,7 @@ Nacionalidade    /Renda_Media / Exp_Media\\
 6 Italiana       /      2.22  /    17.6 \\
 \subsection{ Existe correlação entre anos de experiência e renda desejada? Utilize ferramentas visuais apropriadas (por exemplo, gráfico de dispersão) e calcule o coeficiente de correlação
  de Pearson. Interprete o resultado}\\
-\item Para essa questão é necessário primeiro entendimento sobre o que é a   \href{https://www.blog.psicometriaonline.com.br/o-que-e-correlacao-de-pearson/}{correlação de Pearson} que segundo o site é quando duas variáveis contínuas formam uma associação direta e linear com avanço (fator até +1) ou decremento (fator até -1) ou nula (fator 0) e isso é evidenciado na inclinação na reta, sendo para cima um aumento linear, e para baixo um decremento linear, sendo o declive indicação de como o coeficiente atua. No caso em questão, é pedido para que se analise a experiência em função da pretenção salarial. Em R o seguinte gráfico é obtido:
+\item Para essa questão é necessário primeiro entendimento sobre o que é a   \href{https://www.blog.psicometriaonline.com.br/o-que-e-correlacao-de-pearson/}{correlação de Pearson} que segundo o site é quando duas variáveis contínuas formam uma associação direta e linear com avanço (fator até +1) ou decremento (fator até -1) ou nula (fator 0) e isso é evidenciado na inclinação na reta, sendo para cima um aumento linear, e para baixo um decremento linear, sendo o declive indicação de como o coeficiente atua. No caso em questão, é pedido para que se analise a experiência em função da pretensão salarial. Em R o seguinte gráfico é obtido:
  \begin{figure} [H]
      \centering
      \includegraphics[width=0.6\linewidth]{imagens/q2.3.png}
@@ -316,6 +317,19 @@ Perceba que a candidata de índice 17 na tabela principal tem renda desejada em 
  separados por nacionalidade. Utilize histogramas, box-plots ou gráficos de barras, e
  comente as principais diferenças observadas entre os grupos }
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{imagens/q2.5.1.png}
+    \caption{q2.5.1}
+    \label{fig:placeholder}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{imagens/q2.5.2.png}
+    \caption{q2.5.2}
+    \label{fig:placeholder}
+\end{figure}
 \section{Questão 3}
 
 Nessa questão, o foco é a análise de dados diretamente de um arquivo em .csv sobre o compartilhamento de bicicletas. Em cada item, a ideia principal é usar diferentes gráficos, escalas, conjuntos e cálculos para determinar com precisão informações dedicadas à prática estatística.
@@ -381,7 +395,14 @@ registered & 3656.17 & 3662.0 & 2497.0 & 4776.5 \\
 \end{tabular}
 \end{table}
 
-\subsection{ }
-\subsection{ }
+\subsection{Atribua os níveis correspondentes às variáveis season e weathersit. Construa gráficos
+ de barras para ambas. Qual estação do ano apresenta maior número de usuários? O
+ uso de bicicletas depende da estação? Qual é a condição climática mais favorável
+ para o uso do sistema? }
+\subsection{ Calcule o número total de usuários por dia, somando casual e registered. Converta
+ a variável temp para temperatura real (multiplicando por 41). Em seguida, construa os
+ gráficos de séries temporais para temperatura e número total de usuários. Essas séries
+ apresentam tendência semelhante?  }
 
 \end{document}
+
