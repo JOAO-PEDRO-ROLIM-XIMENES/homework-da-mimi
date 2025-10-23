@@ -296,7 +296,7 @@ Nacionalidade    /Renda_Media / Exp_Media\\
      \label{fig:placeholder}
  \end{figure}
  \item Ao analisar o gráfico, é perceptível que a reta está crescente, ou seja, geralmente, quanto mais anos de experiência, maior é a renda desejada, essa observação da correlação de Pearson permite analisar como uma variável pode influenciar em outra e demonstra uma maneira efetiva de entender o pensamento dentro de um espaço amostral reduzido. \\
- Segundo o código em R, a correlação de Pearson também foi de 0,566, o que indica um avanço moderado, ou seja, geralmente os valores estão ligador de uma maneira linear e seguindo um padrão de avanço.
+ Segundo o código em R, a correlação de Pearson também foi de 0,498, valor bastante próximo de 0,5, o que indica um avanço moderado, ou seja, geralmente as variáveis estão ligadas de uma maneira linear e seguindo um padrão de avanço.
 \subsection{Suponha que a empresa queira priorizar candidatos com pelo menos 10 anos de experiência e renda desejada inferior a 2,0 (mil euros). Quantos candidatos atendem a ambos
  os critérios? Liste suas nacionalidades e idades }
  \begin{table}[H]
@@ -323,6 +323,15 @@ Perceba que a candidata de índice 17 na tabela principal tem renda desejada em 
     \caption{q2.5.1}
     \label{fig:placeholder}
 \end{figure}
+A partir da análise do boxplots da idade x nacionalidade, podemos tirar como conclusão:
+\begin{itemize}
+    \item Franceses e Italianos apresentam a maior médias de idade, com as medianas mais elevadas entre todas as vistas;
+    \item Espanhóis são o grupo mais jovem, único onde a concentração de idade está abaixo dos 30 anos;
+    \item Belgas, ingleses e alemães apresenta uma faixa intermediária;
+    \item Alemães representam o grupo com menor dispersão de resultados;
+    \item Italianos e franceses apresentam os grupos com maior dispersão, indicando idades mais variadas
+    \item Franceses apresentam uma clara concentração de idades mais altas.
+\end{itemize}
 
 \begin{figure}[H]
     \centering
@@ -330,6 +339,35 @@ Perceba que a candidata de índice 17 na tabela principal tem renda desejada em 
     \caption{q2.5.2}
     \label{fig:placeholder}
 \end{figure}
+\begin{itemize}
+    \item Italianos pedem a maior renda dentre todos os grupos, no entanto, assim como nas idades, sua distribuição é bastante heterogênea, mas com mediana bem definida, ou seja, eles mantém um padrão;
+    \item Alemães retém renda desejada alta mas com pouca dispersão, ou seja, os valores são mais altos para o grupo em si;
+    \item Ingleses comparado a outros grupos apresentam uma renda desejada bem alta, com mediana superior a 2mil Euros;
+    \item Franceses atuam em uma faixa intermediária dos dados, com uma dispersão não tão alta;
+    \item Belgas e espanhóis são disparados as menores pretensões salariais, sendo que a dispersão dos espanhóis é ainda maior e com os dados puxados para baixo (mediana levemente mais para baixo do boxspot)
+\end{itemize}
+Em suma, é possível analisar com o conjunto de dados que a seguinte tabela resume as informações:\\
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+\textbf{Nacionalidade} & \textbf{Idade média (tendência)} & \textbf{Renda desejada (tendência)} & \textbf{Observação principal} \\ 
+\midrule
+Espanhola & Baixa & Baixa & Jovens com baixa pretensão salarial \\ 
+Italiana  & Alta e muito variada & Alta e muito variada & Diversidade etária e salarial \\ 
+Francesa  & Alta & Intermediária & Candidatos mais experientes com rendas moderadas \\ 
+Inglesa   & Intermediária & Alta & Faixa média de idade com expectativa salarial elevada \\ 
+Belga     & Intermediária & Intermediária/baixa & Perfil estável e homogêneo \\ 
+Alemã     & Intermediária/alta & Alta & Candidatos mmais velhos com pretensão salarial alta \\ 
+\bottomrule
+\end{tabular}
+}
+\caption{Resumo das tendências por nacionalidade}
+\label{tab:tendencias_nacionalidade}
+\end{table}
+Os resultados da tabela entram em acordo com a correlação de Pearson, a medida de que os dados tendem a seguir certa proporcionalidade de resultados quando analisados simultaneamente, mostrando a relação presente e tendência de candidatos mais velhos desejarem salários mais altos e o inverso disso também ser válido.
+
 \section{Questão 3}
 
 Nessa questão, o foco é a análise de dados diretamente de um arquivo em .csv sobre o compartilhamento de bicicletas. Em cada item, a ideia principal é usar diferentes gráficos, escalas, conjuntos e cálculos para determinar com precisão informações dedicadas à prática estatística.
@@ -405,4 +443,7 @@ registered & 3656.17 & 3662.0 & 2497.0 & 4776.5 \\
  apresentam tendência semelhante?  }
 
 \end{document}
+
+
+
 
