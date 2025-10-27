@@ -7,7 +7,8 @@
 \usepackage{amsmath} % para fórmulas matemáticas
 \usepackage{amssymb} % para fórmulas matemáticas
 \usepackage{geometry}
-\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{graphicx} %manipulação de tabelas utilizando o resizebox
 \usepackage{float} %manipular mais facilmente localização de imagens
 \usepackage{mdframed} % para spotbox
 \usepackage{hyperref}
@@ -131,7 +132,7 @@ Amplitude             : 25.6 \\
 Variância             : 30.84\\ 
 Desvio padrão         : 5.55 \\
 Coeficiente de variação: 29.2\% \\
-
+Percebe-se assim que os resultados entram em concorância com os valores teóricos quando os cálculos são feitos à mão.
 \subsection{Construa um histograma e um boxplot para os dados de emissões. Os dados parecem
  estar simetricamente distribuídos? Existem valores atípicos?} 
  \begin{figure} [H]
@@ -416,6 +417,32 @@ Nessa questão, o foco é a análise de dados diretamente de um arquivo em .csv 
     
     
 \end{itemize}
+
+\subsection*{Cálculo das medidas de tendência central e dispersão}
+
+As medidas foram obtidas conforme as expressões abaixo.
+
+\begin{itemize}
+    \item \textbf{Média:}
+    \[
+    \bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i
+    \]
+
+    \item \textbf{Mediana:}
+    \[
+    \tilde{X} = 
+    \begin{cases}
+    X_{\left( \frac{n+1}{2} \right)}, & \text{se } n \text{ for ímpar} \\
+    \frac{X_{\left( \frac{n}{2} \right)} + X_{\left( \frac{n}{2} + 1 \right)}}{2}, & \text{se } n \text{ for par}
+    \end{cases}
+    \]
+
+    \item \textbf{Quartis:}
+    \[
+    Q_1 = X_{\left( 0.25 \times (n + 1) \right)}, \qquad
+    Q_3 = X_{\left( 0.75 \times (n + 1) \right)}
+    \]
+\end{itemize}
  
 \begin{table}[H]
 \centering
@@ -437,10 +464,119 @@ registered & 3656.17 & 3662.0 & 2497.0 & 4776.5 \\
  de barras para ambas. Qual estação do ano apresenta maior número de usuários? O
  uso de bicicletas depende da estação? Qual é a condição climática mais favorável
  para o uso do sistema? }
+ \begin{itemize}
+    \item a primeira tabela referente ao uso médio de bicicletas por estação do ano mostraram que  verão, primavera e outono tiveram maior número de usos em comparação com o inverno, no qual o uso despencou.
+    \item Já em relação à condição climática, pode-se notar que o o céu limpo ou nublado é muito mais atrativo doq a chuva fraca e forte, inclusive não foi computado valores para chuva forte o que indica adesão nula nessa condição climática.
+
+\end{itemize}
+
+\subsection*{Cálculo do uso médio por estação e condição climática}
+
+Os gráficos de barras apresentados foram construídos a partir das médias de uso de bicicletas
+em função da estação do ano e das condições climáticas. As médias foram obtidas conforme as expressões a seguir.
+
+\begin{itemize}
+    \item \textbf{Uso médio por estação do ano:}
+    \[
+    \bar{U}_s = \frac{1}{n_s} \sum_{i \in S_s} U_i
+    \]
+
+    \item \textbf{Uso médio por condição climática:}
+    \[
+    \bar{U}_c = \frac{1}{n_c} \sum_{i \in C_c} U_i
+    \]
+
+    \item \textbf{Forma geral (agrupamento por qualquer variável categórica \(G\)):}
+    \[
+    \bar{U}_g = \frac{1}{n_g} \sum_{i \in G_g} U_i
+    \]
+\end{itemize}
+
+\noindent
+Em que \( U_i = \text{casual}_i + \text{registered}_i \) representa o total de usuários no dia \( i \);
+\( n_g \) é o número de observações no grupo \( g \); e \( \bar{U}_g \) é o uso médio para cada categoria considerada.
+
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{imagens/porestacao.png}
+    \caption{Uso médio de bicicletas por estação do ano}
+    \label{fig:uso_estacao}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{imagens/porcondição.png}
+    \caption{Uso médio de bicicletas por condição climática}
+    \label{fig:uso_clima}
+\end{subfigure}
+\caption{Distribuição média de uso de bicicletas por estação do ano e condição climática.}
+\label{fig:uso_bicicletas}
+\end{figure}
+
+
+ \noindent
+Os resultados indicam que o uso médio de bicicletas é mais elevado durante o \textbf{verão}, 
+mostrando que temperaturas mais altas são mais atrativos para a utilização do sistema.
+Em contraste, o inverno apresenta menor número de usuários.
+
+Quanto às condições climáticas, nota-se que o \textbf{céu limpo} apresenta o maior número médio de locações, 
+seguido por dias \textbf{nublados}. 
+Nos dias com \textbf{chuva fraca} ou \textbf{chuva forte}, o número de usuários cai consideravelmente, 
+mostrando que o clima tem forte influência no comportamento dos ciclistas.
+ 
 \subsection{ Calcule o número total de usuários por dia, somando casual e registered. Converta
  a variável temp para temperatura real (multiplicando por 41). Em seguida, construa os
  gráficos de séries temporais para temperatura e número total de usuários. Essas séries
  apresentam tendência semelhante?  }
+
+ \subsection*{Análise da relação entre temperatura e número total de usuários}
+
+Inicialmente, calculou-se o número total de usuários diários, somando as quantidades de
+usuários casuais e registrados:
+
+\[
+U_i = \text{casual}_i + \text{registered}_i
+\]
+
+Em seguida, a variável \texttt{temp}, que representa a temperatura normalizada, foi convertida
+para a escala real em graus Celsius, conforme a relação:
+
+\[
+T_i = 41 \times \text{temp}_i
+\]
+
+Foram construídos dois gráficos de séries temporais: um representando a temperatura diária
+e outro o número total de usuários por dia. Muita Atenção, nesta ultima questão o código dos gráficos foi corrigido e feito uma segunda vez pelo ChatGPT, portanto, comentários no R foram de autoria dele.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{imagens/temperatura.png}
+    \caption{Série temporal da temperatura diária (°C)}
+    \label{fig:serie_temp}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{imagens/usuarios.png}
+    \caption{Série temporal do número total de usuários}
+    \label{fig:serie_usuarios}
+\end{subfigure}
+\caption{Séries temporais da temperatura e do número total de usuários.}
+\label{fig:series_temporais}
+\end{figure}
+
+\noindent
+Observa-se que ambas as séries apresentam \textbf{tendência semelhante}: 
+nos períodos com temperaturas mais elevadas, o número total de usuários também tende a ser maior.
+Isso indica uma \textbf{relação positiva} entre temperatura e demanda pelo sistema de bicicletas, o que sugere que condições climáticas mais quentes trazem boa adesão ao uso do serviço.
+
+ 
+
 
 \end{document}
 
